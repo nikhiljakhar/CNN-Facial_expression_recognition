@@ -1,6 +1,6 @@
 # CNN-Facial expression recognition
 A CNN facial expression recognition system made using keras.
-Facial_expression_using_camera file uses the the model trained on the dataset and directly predicts the emotion of the face on the frame.
+Facialexpressionusingcamera file uses the the model trained on the dataset and directly predicts the emotion of the face on the frame.
 
 ## Classes in the dataset:
 1. Happy
@@ -9,101 +9,57 @@ Facial_expression_using_camera file uses the the model trained on the dataset an
 4. Surprised
 
 ## Summary of Model:
-Model: "sequential_1"
-_____________________________________________________________________
-|Layer (type)                 |Output Shape             | Parameters|   
-|=============================|=========================|===========|
-|conv2d_8 (Conv2D)            |(None, 48, 48, 32)       | 320       |
-|_____________________________|_________________________|___________|
-|activation_11 (Activation)   |(None, 48, 48, 32)       | 0         |
-|_____________________________|_________________________|___________|
-|batch_normalization_10       |(None, 48, 48, 32)       | 128       |
-|_____________________________|_________________________|___________|
-|conv2d_9 (Conv2D)            |(None, 48, 48, 32)       | 9248      |
-|_____________________________|_________________________|___________|
-|activation_12 (Activation)   |(None, 48, 48, 32)       | 0         |
-|_____________________________|_________________________|___________|
-|batch_normalization_11       |(None, 48, 48, 32)       | 128       |
-|_____________________________|_________________________|___________|
-|max_pooling2d_4 (MaxPooling2 |(None, 24, 24, 32)       | 0         |
-|_____________________________|_________________________|___________|
-|dropout_6 (Dropout)          |(None, 24, 24, 32)       | 0         |
-|_____________________________|_________________________|___________|
-|conv2d_10 (Conv2D)           |(None, 24, 24, 64)       | 18496     |
-|_____________________________|_________________________|___________|
-|activation_13 (Activation)   |(None, 24, 24, 64)       | 0         |
-|_____________________________|_________________________|___________|
-|batch_normalization_12 (Batc |(None, 24, 24, 64)       | 256       |
-|_____________________________|_________________________|___________|
-|conv2d_11 (Conv2D)           |(None, 24, 24, 64)       | 36928     |
-|_____________________________|_________________________|___________|
-|activation_14 (Activation)   |(None, 24, 24, 64)       | 0         |
-|_____________________________|_________________________|___________|
-|batch_normalization_13 (Batc |(None, 24, 24, 64)       | 256       |
-|_____________________________|_________________________|___________|
-|max_pooling2d_5 (MaxPooling2 |(None, 12, 12, 64)       | 0         |
-|_____________________________|_________________________|___________|
-|dropout_7 (Dropout)          |(None, 12, 12, 64)       | 0         |
-|_____________________________|_________________________|___________|
-|conv2d_12 (Conv2D)           |(None, 12, 12, 128)      | 73856     |
-|_____________________________|_________________________|___________|
-|activation_15 (Activation)   |(None, 12, 12, 128)      | 0         |
-|_____________________________|_________________________|___________|
-|batch_normalization_14 (Batc |(None, 12, 12, 128)      | 512       |
-|_____________________________|_________________________|___________|
-|conv2d_13 (Conv2D)           |(None, 12, 12, 128)      | 147584    |
-|_____________________________|_________________________|___________|
-|activation_16 (Activation)   |(None, 12, 12, 128)      | 0         |
-|_____________________________|_________________________|___________|
-|batch_normalization_15 (Batc |(None, 12, 12, 128)      | 512       |
-|_____________________________|_________________________|___________|
-|max_pooling2d_6 (MaxPooling2 |(None, 6, 6, 128)        | 0         |
-|_____________________________|_________________________|___________|
-|dropout_8 (Dropout)          |(None, 6, 6, 128)        | 0         |
-|_____________________________|_________________________|___________|
-|conv2d_14 (Conv2D)           |(None, 6, 6, 256)        | 295168    |
-|_____________________________|_________________________|___________|
-|activation_17 (Activation)   |(None, 6, 6, 256)        | 0         |
-|_____________________________|_________________________|___________|
-|batch_normalization_16 (Batc |(None, 6, 6, 256)        | 1024      |
-|_____________________________|_________________________|___________|
-|conv2d_15 (Conv2D)           |(None, 6, 6, 256)        | 590080    |
-|_____________________________|_________________________|___________|
-|activation_18 (Activation)   |(None, 6, 6, 256)        | 0         |
-|_____________________________|_________________________|___________|
-|batch_normalization_17 (Batc |(None, 6, 6, 256)        | 1024      |
-|_____________________________|_________________________|___________|
-|max_pooling2d_7 (MaxPooling2 |(None, 3, 3, 256)        | 0         |
-|_____________________________|_________________________|___________|
-|dropout_9 (Dropout)          |(None, 3, 3, 256)        | 0         |
-|_____________________________|_________________________|___________|
-|flatten_1 (Flatten)          |(None, 2304)             | 0         |
-|_____________________________|_________________________|___________|
-|dense_3 (Dense)              |(None, 64)               | 147520    |
-|_____________________________|_________________________|___________|
-|activation_19 (Activation)   |(None, 64)               | 0         |
-|_____________________________|_________________________|___________|
-|batch_normalization_18 (Batc |(None, 64)               | 256       |
-|_____________________________|_________________________|___________|
-|dropout_10 (Dropout)         |(None, 64)               | 0         |
-|_____________________________|_________________________|___________|
-|dense_4 (Dense)              |(None, 64)               | 4160      |
-|_____________________________|_________________________|___________|
-|activation_20 (Activation)   |(None, 64)               | 0         |
-|_____________________________|_________________________|___________|
-|batch_normalization_19 (Batc |(None, 64)               | 256       |
-|_____________________________|_________________________|___________|
-|dropout_11 (Dropout)         |(None, 64)               | 0         |
-|_____________________________|_________________________|___________|
-|dense_5 (Dense)              |(None, 7)                | 455       |
-|_____________________________|_________________________|___________|
-|activation_21 (Activation)   |(None, 7)                | 0         |
-|_____________________________|_________________________|___________|
-|dense_6 (Dense)              |(None, 4)                | 32        |
-|_____________________________|_________________________|___________|
-|activation_22 (Activation)   |(None, 4)                | 0         |
+Model: "sequential1"
+
+| Layer (type)               |  Output Shape       |  Parameters    |
+| :--------------------------| :-----------------: | :------------: |
+| conv2d8 (Conv2D)           | (None, 48, 48, 32)  |       320      | 
+| activation11 (Activation)  | (None, 48, 48, 32)  |       0        | 
+| batchnormalization10       | (None, 48, 48, 32)  |      128       |
+| conv2d9 (Conv2D)           | (None, 48, 48, 32)  |       9248     | 
+| activation12 (Activation)  | (None, 48, 48, 32)  |       0        | 
+| batchnormalization11       | (None, 48, 48, 32)  |      128       |
+| maxpooling2d4 (MaxPooling2 | (None, 24, 24, 32)  |      0         |
+| dropout6 (Dropout)         | (None, 24, 24, 32)  |       0        | 
+| conv2d10 (Conv2D)          | (None, 24, 24, 64)  |       18496    | 
+| activation13 (Activation)  | (None, 24, 24, 64)  |       0        | 
+| batchnormalization12 (Batc | (None, 24, 24, 64)  |      256       |
+| conv2d11 (Conv2D)          | (None, 24, 24, 64)  |       36928    | 
+| activation14 (Activation)  | (None, 24, 24, 64)  |       0        | 
+| batchnormalization13 (Batc | (None, 24, 24, 64)  |      256       |
+| maxpooling2d5 (MaxPooling2 | (None, 12, 12, 64)  |      0         |
+| dropout7 (Dropout)         | (None, 12, 12, 64)  |       0        | 
+| conv2d12 (Conv2D)          | (None, 12, 12, 128) |       73856    | 
+| activation15 (Activation)  | (None, 12, 12, 128) |       0        | 
+| batchnormalization14 (Batc | (None, 12, 12, 128) |      512       |
+| conv2d13 (Conv2D)          | (None, 12, 12, 128) |       147584   | 
+| activation16 (Activation)  | (None, 12, 12, 128) |       0        | 
+| batchnormalization15 (Batc | (None, 12, 12, 128) |      512       |
+| maxpooling2d6 (MaxPooling2 | (None, 6, 6, 128)   |      0         |
+| dropout8 (Dropout)         | (None, 6, 6, 128)   |       0        | 
+| conv2d14 (Conv2D)          | (None, 6, 6, 256)   |       295168   | 
+| activation17 (Activation)  | (None, 6, 6, 256)   |       0        | 
+| batchnormalization16 (Batc | (None, 6, 6, 256)   |      1024      |
+| conv2d15 (Conv2D)          | (None, 6, 6, 256)   |       590080   | 
+| activation18 (Activation)  | (None, 6, 6, 256)   |       0        | 
+| batchnormalization17 (Batc | (None, 6, 6, 256)   |      1024      |
+| maxpooling2d7 (MaxPooling2 | (None, 3, 3, 256)   |      0         |
+| dropout9 (Dropout)         | (None, 3, 3, 256)   |       0        | 
+| flatten1 (Flatten)         | (None, 2304)        |       0        | 
+| dense3 (Dense)             | (None, 64)          |       147520   | 
+| activation19 (Activation)  | (None, 64)          |       0        | 
+| batchnormalization18 (Batc | (None, 64)          |      256       |
+| dropout10 (Dropout)        | (None, 64)          |       0        | 
+| dense4 (Dense)             | (None, 64)          |       4160     | 
+| activation20 (Activation)  | (None, 64)          |       0        | 
+| batchnormalization19 (Batc | (None, 64)          |      256       |
+| dropout11 (Dropout)        | (None, 64)          |       0        | 
+| dense5 (Dense)             | (None, 7)           |       455      | 
+| activation21 (Activation)  | (None, 7)           |       0        | 
+| dense6 (Dense)             | (None, 4)           |       32       | 
+| activation22 (Activation)  | (None, 4)           |       0        |  
 =====================================================================
-Total params: 1,328,199|
+Total params: 1,328,199
 Trainable params: 1,326,023
 Non-trainable params: 2,176
 
@@ -111,4 +67,4 @@ Non-trainable params: 2,176
 ### 0.5744
 
 ## Test Output:
-![img](images/test_output.png)
+![img](images/testoutput.png)
